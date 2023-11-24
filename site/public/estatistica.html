@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção Brasileira</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!--Header 1962-->
+    <div class="header_estatisticas">
+        <div class="container_estatisticas">
+
+            <a href="index.html" class="primeiro_titulo_estatisticas">ESTATÍSTICAS</a>
+            <div class="direcao_estatisticas"> <img src="assets/imagens/seleção_logo.png" alt="logo"
+                    class="imglogo_estatisticas"></div>
+
+
+            <ul class="navbar_estatisticas">
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastre-se</a>
+                </li>
+                <li>
+                    <a style="color: #0b8800;"> História</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="tela_estatistica">
+        <div class="direcao_titulos">
+            <div class="titulo_artilheiros">MAIORES ARTILHEIROS</div>
+            <div class="titulo_grafico"> GOLS POR COPA DO MUNDO</div>
+
+        </div>
+
+        <div class="direcao_pagina">
+            <div class="artilheiros">
+
+                <div class="artilheiro_01">
+                    <img src="assets/imagens/estatisticas/estatisca_01.webp" alt="" class="img_art1" style="height: 120px;">
+                    <p class="txt_artilheiro1"> Neymar - 79 Gols</p>
+                </div>
+
+                <div class="artilheiro_02">
+                    <img src="assets/imagens/estatisticas/estatisca_02.webp" alt="" class="img_art2">
+                    <p class="txt_artilheiro2" style="padding-right: 40px;"> Pelé - 77 Gols</p>
+                </div>
+
+                <div class="artilheiro_03">
+                    <img src="assets/imagens/estatisticas/estatisca_03.webp" alt="" class="img_art3">
+                    <p class="txt_artilheiro3"> Ronaldo - 62 Gols</p>
+                </div>
+
+                <div class="artilheiro_04">
+                    <img src="assets/imagens/estatisticas/estatisca_04.webp" alt="" class="img_art4">
+                    <p class="txt_artilheiro4"> Romário - 55 Gols</p>
+                </div>
+
+                <div class="artilheiro_05">
+                    <img src="assets/imagens/estatisticas/estatisca_05.webp" alt="" class="img_art5">
+                    <p class="txt_artilheiro5"> Zico - 48 Gols</p>
+                </div>
+            </div>
+
+            <div class="direcao_grafico2">
+
+                <div>
+                    <canvas id="myChart2" class="chart-container" style=" height:200px; width:100%px"></canvas>
+                </div>
+
+
+                <div class="tiulo_graficopizza">
+                    APROVEITAMENTO EM FINAIS
+                </div>
+
+
+                <div>
+                    <canvas id="myChart" class="chart-container2"
+                        style="position: relative; height:150px; width:100%"></canvas>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</body>
+<script>
+    const labels = [
+        'Vitórias', 'Derrotas'
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            borderColor: "black",
+            backgroundColor: "#10520A",
+            data: [28, 72],
+        },
+        ]
+    };
+
+
+
+    const labels2 = [
+        '1958',
+        '1962',
+        '1970',
+        '1994',
+        '2002',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Gols',
+            borderColor: "black",
+            backgroundColor: "#10520A",
+            data: [20 - 4, 30 - 16, 40 - 21, 50 - 39, 60 - 42, 70 - 52, 30],
+        },
+        ]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: '7 finais e 5 vitórias'
+                }
+            }
+        },
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+<script>
+     const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+</script>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção Brasileira</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!--Header 1962-->
+    <div class="header_1962">
+        <div class="container_1962">
+
+            <a href="index.html" class="primeiro_titulo_1962">1962</a>
+            <div class="direcao_1962"> <img src="assets/imagens/seleção_logo.png" alt="logo" class="imglogo_1962"></div>
+
+
+            <ul class="navbar_1962">
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastre-se</a>
+                </li>
+                <li>
+                    <a style="color: #0b8800;"> História</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bloco_tela1962">
+        <!--Biblioteca imagens-->
+        <div class="historia_1962" id="historia_pais">
+            <h1 class="titulo_historia_1962">BICAMPEONATO CONSECUTIVO</h1>
+            <div class="direcaotexto_1962">
+                <div class="slider">
+
+                    <div class="slides">
+                        <!---Radio Buttons--->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <!--- Fim Radio Buttons--->
+
+                        <!--- Slide images--->
+                        <div class="slide first">
+                            <img src="assets/imagens/Copa 1962/copa1962_01.avif" alt="Imagem1">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/imagens/Copa 1962/copa1962_02.jpeg" alt="Imagem2">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/imagens/Copa 1962/copa1962_04.jpg" alt="Imagem3">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/imagens/Copa 1962/copa1962_05.jpg" alt="Imagem4">
+                        </div>
+                        <!--- Fim Slide images--->
+
+                        <!--- Navigation auto--->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+
+                    </div>
+                </div>
+
+
+                <p class="texto_historia_1962">
+
+                    <br>Na final da Copa, disputada em 17 de junho de 1962, <br>realizidada no Chile,  o Brasil superou<br> a Tchecoslováquia de virada  <br>por 3 a 1, com gols de Amarildo, Zito e Vavá.  <br>Era um adversário que a Seleção já <br>havia enfrentado na fase de grupos e<br> empatado por 0 a 0, em um jogo <br>que ficou marcado pela contusão de Pelé. <br>O Rei não voltou mais a jogar naquele Mundial. <br>
+
+                    <br>O Brasil encerrou a campanha com <br>cinco vitórias em seis jogos, 14 gols<br> marcados e apenas cinco sofridos.<br> Garrincha e Vavá foram os artilheiros, <br>com quatro gols cada.  O Brasil dessa <br>forma conquistou seu segundo título <br>consecutivo de Copa do Mundo. <br>
+                    
+                    <br> A vitória em 1962 confirmou a força e<br> a resiliência do futebol brasileiro,<br> mostrando que a equipe poderia se<br> adaptar e superar adversidades para <br>alcançar a glória no cenário <br>mundial do futebol. <br>
+                    
+                    
+                </p>
+            </div>
+
+        </div>
+
+        <div class="biblioteca">
+            <div class="box_img">
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1962/copa1962_07.webp" alt="">
+                    <p class="texto_imagem">
+                        Didi erguendo a taça após vitória do Brasil, volante da seleção estava conseguindo seu segundo título de copa do mundo, pois estava no ano de 1958 da primeira conquista.
+                    </p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1962/copa1962_08.jpg" alt="">
+                    <p class="texto_imagem">
+                        Na imagem podemos ver Pelé, Garrincha e o médico da seleção conversando referente a lesão que pôs um ponto final na participação do Rei no Mundial do Chile.
+                    </p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1962/copa1962_06.jpg" alt="">
+                    <p class="texto_imagem">
+                        Pelé e Amarildo se abraçando depois que o jogador do Botafogo o substituí ele e tem um ótimo desempenho do atacante na estreia, que marcou os dois gols da vitória de 2 a 1 sobre a Espanha, no último jogo da fase de grupos.
+                    </p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1962/copa1962_03.webp" alt="">
+                    <p class="texto_imagem">
+                        Garrincha, o “anjo das pernas tortas” foi eleito o melhor jogador daquela Copa do Mundo de 1962. Com uma das melhores atuações de todos os tempos, até os dias de hoje é lembrado por conta da sua genialidade.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script>
+    /*Carrossel*/
+    let count = 1;
+    document.getElementById("radio1").checked = true;
+
+    setInterval(function () {
+        nextImage();
+    }, 5000)
+
+    function nextImage() {
+        count++;
+        if (count > 4) {
+            count = 1
+        }
+
+        document.getElementById("radio" + count).checked = true;
+    }
+</script>
+</body>
+
+</html>

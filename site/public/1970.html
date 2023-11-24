@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção Brasileira</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!--Header 1970-->
+    <div class="header_1970">
+        <div class="container_1970">
+
+            <a href="index.html" class="primeiro_titulo_1958">1970</a>
+            <div class="direcao_1970"> <img src="assets/imagens/seleção_logo.png" alt="logo" class="imglogo_1970"></div>
+
+            <ul class="navbar_1970">
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastre-se</a>
+                </li>
+                <li>
+                    <a style="color: #0b8800;"> História</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="bloco_tela1970">
+        <!--Biblioteca imagens-->
+        <div class="historia_1970" id="historia_pais">
+            <h1 class="titulo_historia_1970">PRIMEIRO TRICAMPEÃO DO MUNDO</h1>
+            <div class="direcaotexto_1970">
+                <div class="slider">
+
+                    <div class="slides">
+                        <!---Radio Buttons--->
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <!--- Fim Radio Buttons--->
+
+                        <!--- Slide images--->
+                        <div class="slide first">
+                            <img src="assets/imagens/Copa 1970/copa1970_02.jpeg" alt="Imagem1">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/imagens/Copa 1970/copa1970_01.jpeg" alt="Imagem2">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/imagens/Copa 1970/copa1970_04.jpg" alt="Imagem3">
+                        </div>
+                        <div class="slide">
+                            <img src="assets/imagens/Copa 1970/copa1970_08.webp" alt="Imagem4">
+                        </div>
+                        <!--- Fim Slide images--->
+
+                        <!--- Navigation auto--->
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+
+                        </div>
+                    </div>
+
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
+
+                    </div>
+                </div>
+
+
+                <p class="texto_historia_1970">
+
+
+                    <br>No dia 21 de junho, Seleção Brasileira derrotou <br>a Itália por 4 a 1 e levantou a taça<br> Jules Rimet pela terceira vez na história. <br> Os gols da partida foram marcados por Pelé, Gérson, <br>Jairzinho e Carlos Alberto Torres. <br>Boninsegna fez o gol de honra dos italianos <br> no Estádio Azteca, na Cidade do México. <br>
+
+                    <br>Com a conquista, o Brasil encerrou uma campanha <br>de seis vitórias em seis jogos, tornando-se a <br> primeira equipe a ter 100% de aproveitamento <br>nas Eliminatórias e na Copa do Mundo.
+                    <br> Além disso, também foi o primeiro time a chegar <br>ao tricampeonato mundial. <br>Por muitos jornalistas e torcedores foi a melhor <br>seleção brasileira de todos os tempos. <br>
+
+                    <br>Após o apito final, os jogadores brasileiros <br>comemoraram em Êxtase.  Torcedores, jornalistas <br>e seguranças mexicanos invadiram o gramado,  <br>desesperados por qualquer peça de roupa de <br>qualquer um dos jogadores. O Rei Pelé ficou apenas <br> de cueca e 'sombrero', o tradicional chapéu do país, <br> enquanto comemorava o título nos ombros do povo. <br>
+
+                </p>
+            </div>
+
+        </div>
+
+        <div class="biblioteca">
+            <div class="box_img">
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1970/copa1970_06.jpeg" alt="">
+                    <p class="texto_imagem">
+                        Escalação da seleção brasileira antes do jogo contra a Itália. Nela podemos ver grandes craques como: Pelé, Jairzinho, Rivelino, Tostão e Carlos Alberto.
+                    </p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1970/copa1970_07.jpeg" alt="">
+                    <p class="texto_imagem">
+                        Brito e Gerson em uma dívida com um jogar da Itália. Gerson, o Canhotinha de ouro foi um grande maestro para o tricampeonato da seleção.</p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1970/copa1970_03.jpg" alt="">
+                    <p class="texto_imagem">
+                        Jairzinho comemorando após ter feito o terceiro gol contra Itália. Naquela copa ele foi o artilheiro da seleção com 7 gols em todos os jogos que disputou.  
+                    </p>
+                </div>
+
+                <div class="mySlides">
+                    <img src="assets/imagens/Copa 1970/copa1970_05.jpeg" alt="">
+                    <p class="texto_imagem">
+                        Pelé sendo ovacionado por torcedores e jogadores, após conseguir seu terceiro título de copa do mundo. Apenas ele o maior de todos os tempos tem esse feito até os dias de hoje.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<script>
+    /*Carrossel*/
+    let count = 1;
+    document.getElementById("radio1").checked = true;
+
+    setInterval(function () {
+        nextImage();
+    }, 5000)
+
+    function nextImage() {
+        count++;
+        if (count > 4) {
+            count = 1
+        }
+
+        document.getElementById("radio" + count).checked = true;
+    }
+</script>
+</body>
+
+</html>

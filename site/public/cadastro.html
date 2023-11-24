@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleção Brasileira</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!--Header Cadastro-->
+  <div class="header_cadastro">
+    <div class="container_cadastro">
+
+      <a href="index.html" class="primeiro_titulo_cadastro">BRASIL</a>
+      <div class="direcao_logo_cadastro"> <img src="assets/imagens/seleção_logo.png" alt="logo" class="imglogo_cadastro"></div>
+
+
+      <ul class="navbar_cadastro">
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li>
+          <a href="cadastro.html">Cadastre-se</a>
+        </li>
+        <li>
+          <a style="color: #0b8800;"> História</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!--Banner Login-->
+  <div class="banner_cadastro">
+
+    <div class="quadro_cadastro">
+
+      <p class="login_cadastro">Cadastrar</p>
+
+      <div class="cadastro">
+
+        <div class="categoria_cadastro">
+          <p class="categoria_campos_cadastro">Nome:</p>
+          <input type="text" id="ipt_nome" class="campos_cadastro" placeholder="Seu nome">
+        </div>
+
+        <div class="categoria_cadastro">
+          <p class="categoria_campos_cadastro">Celular:</p>
+          <input type="text" id="ipt_celular" class="campos_cadastro" placeholder="Seu número">
+        </div>
+
+        <div class="categoria_cadastro">
+          <p class="categoria_campos_cadastro">E-mail:</p>
+          <input type="text" id="ipt_email" class="campos_cadastro" placeholder="Seu e-mail">
+        </div>
+
+        <div class="categoria_cadastro">
+          <p class="categoria_campos_cadastro">Senha:</p>
+          <input type="password" id="ipt_senha" class="campos_cadastro" placeholder="Sua senha">
+        </div>
+
+        <div class="categoria_cadastro">
+          <p class="categoria_campos_cadastro">Confirmar senha:</p>
+          <input type="password" id="ipt_confirmarsenha" class="campos_cadastro" placeholder="Confirme senha">
+        </div>
+
+        <button class="button_cadastro" onclick="cadastrar()">
+          Entrar
+        </button>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  function cadastrar() {
+    /*aguardar();*/
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = ipt_nome.value;
+    var celularVar = ipt_celular.value;
+    var emailVar = ipt_email.value;
+    var senhaVar = ipt_senha.value;
+    var confirmacaoSenhaVar = ipt_confirmarsenha.value;
+
+    if (
+      nomeVar == "" ||
+      celularVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""  
+    ) {
+      alert(`Deu erro`)
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        celularServer: celularVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        
+      });
+
+    return false;
+  }
+
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
+
+</script>

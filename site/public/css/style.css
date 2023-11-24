@@ -1,0 +1,1555 @@
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Poppins:wght@500&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    scroll-behavior: smooth;
+}
+
+/*Menu Lateral*/
+.containermenu{
+    width: 90px;
+    height: 740px;
+    background-color: black;
+    transition: .3s;
+    position: absolute;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.arrow{
+    padding: 0 12px;
+    transition: .3s;
+    width: 70px;
+    height: 50px;
+}
+
+.menu{
+    height: 100px;
+    border-bottom: .5px solid #000 ; 
+    color: #10520A;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.menu:hover{
+    
+    background-color: yellow;
+    transition: 3s;
+}
+
+.btn:hover{
+    padding-left: 5px;
+    background-color: yellow;
+    transition: 1s;
+}
+
+.icon{
+    flex: 1;
+    min-width: 50px;
+    height: 40px;
+    margin: 20px;
+    
+}
+
+.txt{
+    flex: 5;
+    padding-left: 10px;     
+    color: #10520A;
+    transition: .3s;
+    font-size: center;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.txt a{
+    color: #10520A;
+    text-decoration: none;
+}
+
+.oculto{
+    width: 280px;
+}
+
+.containermenu .txt{
+   display: none;
+}
+
+.oculto .txt{
+ display: block;
+}
+
+.oculto .btn .arrow{
+    transform: rotate(180deg);
+}
+
+/*Tela*/
+/*Header*/
+
+
+ .header{
+    background-color: #0B3B98;
+    width: 94.76%;
+    height: 111px;
+    margin-left: 80px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.imglogo{
+    width: 68px;
+    margin-left: 50px;
+}
+
+.header .container .navbar{
+    display: flex;
+    list-style: none;
+}
+
+.header .container .navbar li a{
+    display: inline;
+    padding: 0 15px;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/*Banner*/
+
+.banner{
+    width: 94.76%;
+    height: 672px;
+    background-image: url(imagens/pel2_banner.jpeg);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    margin-left: 80px;
+}
+
+.ajustetexto{
+    width: 80%;
+    height: 750px;
+    margin: -3% 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.textopagina{
+    color: #FFF;
+    text-align: center;
+    font-family: Impact;
+    font-size: 75px;
+    font-style: normal;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-top: -350px;
+   margin-left: -40px;
+    
+}
+
+/*Historia*/
+
+.historia{
+    width: 100%;
+    height: 750px;
+    background-color: #14460f;
+}
+
+.titulo_historia{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+}
+
+
+
+.direcaotexto{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 10%;
+    margin-top: 70px;
+}
+
+.texto_historia{
+    font-size: 22px;
+    text-align: center;
+    font-family: Hanalei Fill;
+    margin-bottom: 3%;
+    color: #ECD614;
+    margin-right: -5%;
+}
+
+
+/*Carrosel*/
+.slider{
+    margin-right: 7%;
+    width: 750px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide{
+    width: 25%;
+    position: relative;
+    transition: 2s;
+}
+
+.slide img{
+      width: 800px;
+}
+
+.manual-navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 3px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: white;
+}
+
+/*quando radio estiver checked movimente a margin left nesse valor*/
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+#radio4:checked ~ .first{
+    margin-left: -75%;
+}
+
+#radio5:checked ~ .first{
+    margin-left: -100%;
+}
+
+
+.navigation-auto div{
+    border: 3px solid #20a6ff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background-color: white;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background-color: white;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background-color: white;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background-color: white;
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background-color: white;
+}
+
+/*Login*/
+.header_login{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_login .container_login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_login{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.direcao_logo{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_login{
+    width: 68px;
+}
+
+.header_login .container_login .navbar_login{
+    display: flex;
+    list-style: none;
+}
+
+.header_login .container_login .navbar_login li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+/*Banner-Login*/
+.banner_login{
+    width: 100%;
+    height: 669px;
+    background-image: url(imagens/cadastro_login.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadro_login{  
+    height: 400px;
+    width: 350px;
+    border-radius: 50px;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.login_titulo{
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #0B3B98;
+}
+
+.login{
+    display: flex;
+    height: 90%;
+    width: 80%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.categoria{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campos{
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 5px solid #000;
+}
+
+.categoria_campos{
+    font-size: 23px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #10520A;
+}
+
+.button_login{
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #10520A;
+    background-color: #ECD614;
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.button_login:hover{
+    background-color: #ffffff;
+    transition: 2s;
+}
+
+/*Cadastro*/
+.header_cadastro{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_cadastro .container_cadastro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_cadastro{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.direcao_logo_cadastro{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_cadastro{
+    width: 68px;
+}
+
+.header_cadastro .container_cadastro .navbar_cadastro{
+    display: flex;
+    list-style: none;
+}
+
+.header_cadastro .container_cadastro .navbar_cadastro li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+.banner_cadastro{
+    width: 100%;
+    height: 669px;
+    background-image: url(imagens/cadastro_login.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadro_cadastro{  
+    height: 80%;
+    width: 30%;
+    border-radius: 50px;
+    background-color: #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.login_cadastro{
+    margin-top: 10px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #0B3B98;
+}
+
+.cadastro{
+    display: flex;
+    height: 90%;
+    width: 80%;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.categoria_cadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campos_cadastro{
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 5px solid #000;
+}
+
+.categoria_campos_cadastro{
+    font-size: 23px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #10520A;
+}
+
+.button_cadastro{
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #10520A;
+    background-color: #ECD614;
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.button_cadastro:hover{
+    background-color: #ffffff;
+    transition: 2s;
+}
+
+/*Header-1958*/
+.header_1958{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_1958 .container_1958{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_1958{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+    
+}
+
+.direcao_1958{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_1958{
+    width: 68px;
+}
+
+.header_1958 .container_1958 .navbar_1958{
+    display: flex;
+    list-style: none;
+}
+
+.header_1958 .container_1958 .navbar_1958 li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+/*Bloco 1958*/
+.bloco_tela1958{
+    width: 100%;
+    height: 1200px;
+    background-color: #000;
+}
+
+/*Historia e carrossel 1958*/
+.historia_1958{
+    width: 100%;
+    height: 650px;
+    background-color: #000000;
+}
+
+.titulo_historia_1958{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+}
+
+
+
+.direcaotexto_1958{
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.texto_historia_1958{
+    font-size: 17px;
+    font-family: hanalei fill;
+    margin-bottom: 3%;
+    color: #ECD614;
+    margin-right: -5%;
+}
+
+/*Biblioteca de todos*/
+
+.biblioteca {
+    width: 100%;
+    height: 400px;
+    padding: 0 100px;
+}
+
+ .box_img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+
+}
+
+.mySlides {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    border-radius: 100px;
+    transition: all 0.5s linear;
+    cursor: pointer;
+}
+
+ .mySlides:hover{
+     width: 80%;
+    height: 90%; 
+}
+
+.biblioteca .box_img .mySlides img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 200px; 
+}  
+
+.texto_imagem{
+    color: #10520A;
+    margin: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+    font-size: 15px;
+}
+
+
+/*Header-1962*/
+.header_1962{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_1962 .container_1962{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_1962{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.direcao_1962{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_1962{
+    width: 68px;
+}
+
+.header_1962 .container_1962 .navbar_1962{
+    display: flex;
+    list-style: none;
+}
+
+.header_1962 .container_1962 .navbar_1962 li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+/*Bloco 1962*/
+.bloco_tela1962{
+    width: 100%;
+    height: 1200px;
+    background-color: #000;
+}
+
+/*Historia e carrossel 1962*/
+.historia_1962{
+    width: 100%;
+    height: 650px;
+    background-color: #000000;
+}
+
+.titulo_historia_1962{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+}
+
+
+
+.direcaotexto_1962{
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.texto_historia_1962{
+    font-size: 17px;
+    font-family: hanalei fill;
+    margin-bottom: 20px;
+    color: #ECD614;
+    margin-left: 4%;
+}
+
+/*Header-1970*/
+.header_1970{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_1970 .container_1970{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_1970{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.direcao_1970{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_1970{
+    width: 68px;
+}
+
+.header_1970 .container_1970 .navbar_1970{
+    display: flex;
+    list-style: none;
+}
+
+.header_1970 .container_1970 .navbar_1970 li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+/*Bloco 1970*/
+.bloco_tela1970{
+    width: 100%;
+    height: 1200px;
+    background-color: #000;
+}
+
+/*Historia e carrossel 1970*/
+.historia_1970{
+    width: 100%;
+    height: 650px;
+    background-color: #000000;
+}
+
+.titulo_historia_1970{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+}
+
+
+
+.direcaotexto_1970{
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.texto_historia_1970{
+    font-size: 17px;
+    font-family: hanalei fill;
+    color: #ECD614;
+    margin-right: -5%;
+}
+
+/*Header-1994*/
+.header_1994{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_1994 .container_1994{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_1994{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.direcao_1994{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_1994{
+    width: 68px;
+}
+
+.header_1994 .container_1994 .navbar_1994{
+    display: flex;
+    list-style: none;
+}
+
+.header_1994 .container_1994 .navbar_1994 li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+/*Bloco 1994*/
+.bloco_tela1994{
+    width: 100%;
+    height: 1200px;
+    background-color: #000;
+}
+
+/*Historia e carrossel 1970*/
+.historia_1994{
+    width: 100%;
+    height: 650px;
+    background-color: #000000;
+}
+
+.titulo_historia_1994{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+}
+
+
+
+.direcaotexto_1994{
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.texto_historia_1994{
+    font-size: 18px;
+    font-family: hanalei fill;
+    margin-bottom: 3%;
+    color: #ECD614;
+    margin-right: -5%;
+}
+
+/*Header-2002*/
+.header_2002{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_2002 .container_2002{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_2002{
+    font-size: 48px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.direcao_2002{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_2002{
+    width: 68px;
+}
+
+.header_2002 .container_2002 .navbar_2002{
+    display: flex;
+    list-style: none;
+}
+
+.header_2002 .container_2002 .navbar_2002 li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+/*Bloco 2002*/
+.bloco_tela2002{
+    width: 100%;
+    height: 1200px;
+    background-color: #000;
+}
+
+/*Historia e carrossel 2002*/
+.historia_2002{
+    width: 100%;
+    height: 650px;
+    background-color: #000000;
+}
+
+.titulo_historia_2002{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+}
+
+
+
+.direcaotexto_2002{
+    display: flex;
+    justify-content: space-evenly;
+    height: 500px;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.texto_historia_2002{
+    font-size: 18px;
+    font-family: hanalei fill;
+    
+    color: #ECD614;
+    margin-right: -5%;
+}
+
+/*Header Estatística*/
+.header_estatisticas{
+    background-color: #0B3B98;
+    width: 100%;
+    height: 70px;
+}
+
+.header_estatisticas .container_estatisticas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.primeiro_titulo_estatisticas{
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #ECD614;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    text-decoration: none;
+}
+
+.direcao_estatisticas{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: 135px;
+}
+
+.imglogo_estatisticas{
+    width: 68px;
+    margin-right: 60px;
+}
+
+.header_estatisticas .container_estatisticas .navbar_estatisticas{
+    display: flex;
+    list-style: none;
+}
+
+.header_estatisticas .container_estatisticas .navbar_estatisticas li a{
+    display: inline;
+    padding: 0 15px;
+    text-decoration: none;
+    color: #ECD614;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+/*tela estatistica*/
+.tela_estatistica{
+    width: 100%;
+    height: 669px;
+    background-color: #ECD614;
+}
+
+.direcao_titulos{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.titulo_grafico{
+    display: flex;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #10520A;
+    margin-top: 10px;
+    margin-right: 140px;
+    
+}
+
+.titulo_artilheiros{
+    display: flex;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #10520A;
+    padding: 10px;
+    padding-left: 100px;
+    
+}
+
+.direcao_pagina{
+    display: flex; 
+    justify-content: space-around; 
+    width: 100%;
+}
+
+.artilheiros{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+.artilheiro_01{
+    width: 80%;
+    display: flex;
+    
+    text-align: center;
+}
+
+.img_art1{
+    height: 115px;
+    padding-left: 100px;
+}
+
+.txt_artilheiro1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding-top: 40px;
+    text-align: right;
+}
+
+.artilheiro_02{
+    width: 80%;
+    display: flex;
+    text-align: center;
+}
+
+.img_art2{
+    height: 115px;
+    padding-left: 100px;
+}
+
+.txt_artilheiro2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding-top: 40px;
+    padding-left: 10px;
+    text-align: right;
+}
+
+.artilheiro_03{
+    width: 80%;
+    display: flex;
+    text-align: center;
+}
+
+.img_art3{
+    height: 115px;
+    padding-left: 100px;
+}
+
+.txt_artilheiro3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding-top: 40px;
+    padding-left: 5px;
+    text-align: right;
+}
+.artilheiro_04{
+    width: 80%;
+    display: flex;
+    text-align: center;
+}
+
+.img_art4{
+    height: 115px;
+    padding-left: 100px;
+}
+
+.txt_artilheiro4{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding-top: 40px;
+    padding-left: 10px;
+    text-align: right;
+}
+
+.artilheiro_05{
+    width: 80%;
+    display: flex;
+    text-align: center;
+}
+
+.img_art5{
+    height: 115px;
+    padding-left: 100px;
+}
+
+.txt_artilheiro5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    padding-top: 40px;
+    padding-left: 15px;
+    text-align: right;
+}
+
+.chart-container{
+    background-color: rgba(255, 255, 255, 0.694);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.tiulo_graficopizza{
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #10520A;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+.direcao_grafico2{
+    display: flex; 
+    align-items: center; 
+    width: 40%; 
+    flex-direction: column;
+}
+
+/*Tela valores*/
+
+.valores{
+    width: 100%;
+    height: 750px;
+    background-color: #ECD614;
+}
+
+.dir_txtvalores{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.titulo_valores{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+    padding-top: 30px;
+    color: #14460f;
+}
+
+.primeiro_card{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.card1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+}
+
+
+.img_card1{
+    background-image: url(imagens/valores/maos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.tt_card1{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #14460f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.txt_card1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+}
+
+.card2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.img_card2{
+    background-image: url(imagens/valores/panigrahena.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.tt_card2{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #14460f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.txt_card2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+}
+
+.card3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_card3{
+    background-image: url(imagens/valores/ativismo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.tt_card3{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #14460f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.txt_card3{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+}
+
+
+
+.segundo_card{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.card4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_card4{
+    background-image: url(imagens/valores/inspiracao.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.tt_card4{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #14460f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.txt_card4{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+}
+
+.card5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.img_card5{
+    background-image: url(imagens/valores/inspiracao\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.tt_card5{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #14460f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.txt_card5{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+}
+
+.card6{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_card6{
+    background-image: url(imagens/valores/apreciar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+}
+.tt_card6{
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #14460f;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.txt_card6{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 15px;
+    padding-top: 20px;
+    text-align: center;
+    font-family: hanalei fill;
+}
+
+/*Tela Dashboard*/
+.lateral_deshboard {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    width: 18.5%;
+    height: 739px;
+    padding: 0 0.9%;
+}
+
+.imgperfil_dashboard{
+    width: 60%;
+    padding: 2%;
+    margin-left: 40px;
+    margin-top: 12%;
+    
+}
+
+.tela_dashboard{
+    background-color: #464545;
+    height: 739px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.txt_dashboard{
+    color: #f2f2f2;
+    margin-top: 20%;
+    font-size: 300%;
+    text-shadow: 1px 1px white, -1px -1px #999;
+    display: flex;
+    justify-content: center;
+}
+.dados_usuario{
+    font-size: 90%;
+    margin: 15% 0 15% 0;
+    color: #f2f2f2;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dados1{
+    
+    text-align: center;
+    margin-right: 20px;
+}
+
+

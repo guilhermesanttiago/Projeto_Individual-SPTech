@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção Brasileira</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--Header Login-->
+    <div class="header_login">
+        <div class="container_login">
+
+            <a href="index.html" class="primeiro_titulo_login">BRASIL</a>
+            <div class="direcao_logo"> <img src="assets/imagens/seleção_logo.png" alt="logo" class="imglogo_login"></div>
+           
+
+            <ul class="navbar_login">
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">Cadastre-se</a>
+                </li>
+                <li>
+                    <a style="color: #0b8800;"> História</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Banner Login-->
+    <div class="banner_login">
+
+        <div class="quadro_login">
+
+            <p class="login_titulo">Login</p>
+
+            <div class="login">
+
+                <div class="categoria">
+                    <p class="categoria_campos">E-mail:</p>
+                    <input type="text" id="ipt_email" class="campos" placeholder="Seu e-mail">
+                </div>
+
+                <div class="categoria">
+                    <p class="categoria_campos">Senha:</p>
+                    <input type="password" id="ipt_senha"  class="campos" placeholder="Sua senha">
+                </div>
+                <button class="button_login" onclick="entrar()">
+                    Entrar
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+</script>
