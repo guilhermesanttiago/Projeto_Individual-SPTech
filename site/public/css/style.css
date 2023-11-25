@@ -1536,6 +1536,7 @@
     font-size: 500%;
     text-shadow: 1px 1px white, -1px -1px #999;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 100px;
     animation: txt_dashboard 2s linear infinite alternate;
 }
 
