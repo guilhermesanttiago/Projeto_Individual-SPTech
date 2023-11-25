@@ -1522,7 +1522,7 @@
 }
 
 .tela_dashboard{
-    background-color: #464545;
+    background-color: #ecd614bf;
     height: 739px;
     width: 100%;
     display: flex;
@@ -1530,12 +1530,13 @@
 }
 
 .txt_dashboard{
-    color: #f2f2f2;
+    color: #10520A;
     margin-top: 20%;
-    font-size: 300%;
+    font-size: 400%;
     text-shadow: 1px 1px white, -1px -1px #999;
     display: flex;
     justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .dados_usuario{
     font-size: 90%;
@@ -1548,19 +1549,41 @@
 .dados1{
     text-align: center;
     margin-right: 10px;
-    font-size: 16px;
+    font-size: 13px;
     padding-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .dados2{
     text-align: center;
     margin-right: 10px;
-    font-size: 16px;
-    height: 150px;
+    font-size: 13px;
+    height: 120px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .direcao_button{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.quiz_edicao{
+    text-decoration: none;
+    font-size: 25px;
+    color: #e5e5e5;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+
+.button_dashboard{
+    text-decoration: none;
+    font-size: 25px;
+    color: #e5e5e5;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
