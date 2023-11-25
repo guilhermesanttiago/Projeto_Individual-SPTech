@@ -1526,17 +1526,25 @@
     height: 739px;
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .txt_dashboard{
     color: #10520A;
-    margin-top: 20%;
-    font-size: 400%;
+    height: 50px;
+    font-size: 500%;
     text-shadow: 1px 1px white, -1px -1px #999;
-    display: flex;
-    justify-content: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    animation: txt_dashboard 2s linear infinite alternate;
+}
+
+@keyframes txt_dashboard{
+    from {
+        transform: translateY(50px);}
+    to {
+        transform: translateY(0);
+        }    
 }
 .dados_usuario{
     font-size: 90%;
@@ -1590,11 +1598,21 @@
 
 
 .button_dashboard{
-    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
     font-size: 25px;
-    color: #e5e5e5;
-    border-radius: 20px;
-    padding-bottom: 20px;
+    color: #000000;
+    background-color: #ECD614;
+    width: 200px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding-top: 25px;
+    margin-top: 25px;
+}
+
+.button_dashboard:hover{
+    background-color: #10520A;
+    transition: 1s;
+   width: 112%;
 }
