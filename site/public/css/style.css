@@ -1585,9 +1585,12 @@
     background-color: #ECD614;
     width: 200px;
     height: 30px;
-    align-self: center;
+    display: flex;
+    justify-content: center;
     cursor: pointer;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+
 }
 
 .quiz_edicao:hover{
