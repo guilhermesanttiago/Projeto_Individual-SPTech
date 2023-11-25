@@ -1516,9 +1516,8 @@
 
 .imgperfil_dashboard{
     width: 60%;
-    padding: 2%;
-    margin-left: 40px;
-    margin-top: 12%;
+    margin-left: 50px;
+    margin-top: 20%;
     
 }
 
@@ -1548,8 +1547,16 @@
 
 .dados1{
     text-align: center;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.dados2{
+    text-align: center;
+    margin-right: 10px;
+    font-size: 16px;
+    height: 150px;
 }
 
 .direcao_button{
