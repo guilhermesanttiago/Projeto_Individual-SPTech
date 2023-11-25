@@ -1617,3 +1617,10 @@
     transition: 1s;
    width: 112%;
 }
+
+.menssageErro{
+    color: #000000;
+    text-align: center;
+    font-size: 20px;
+    font-family: impact;
+}

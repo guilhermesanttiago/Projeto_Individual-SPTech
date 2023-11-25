@@ -47,7 +47,7 @@
 
         <div class="categoria_cadastro">
           <p class="categoria_campos_cadastro">Celular:</p>
-          <input type="text" id="ipt_celular" class="campos_cadastro" placeholder="Seu número">
+          <input type="text" id="ipt_celular" class="campos_cadastro" placeholder="(XX)XXXXX-XXXX">
         </div>
 
         <div class="categoria_cadastro">
@@ -64,7 +64,7 @@
           <p class="categoria_campos_cadastro">Confirmar senha:</p>
           <input type="password" id="ipt_confirmarsenha" class="campos_cadastro" placeholder="Confirme senha">
         </div>
-
+        <div class="menssageErro" id="mensagem_erro"></div>
         <button class="button_cadastro" onclick="cadastrar()">
           Entrar
         </button>
@@ -95,7 +95,7 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""  
     ) {
-      alert(`Deu erro`)
+      mensagem_erro.innerHTML = "Preencha os campos";
     }
 
     // Enviando o valor da nova input

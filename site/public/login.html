@@ -49,6 +49,7 @@
                     <p class="categoria_campos">Senha:</p>
                     <input type="password" id="ipt_senha"  class="campos" placeholder="Sua senha">
                 </div>
+                <div class="menssageErro" id="mensagem_erro"></div>
                 <button class="button_login" onclick="entrar()">
                     Entrar
                 </button>
@@ -67,14 +68,12 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = ipt_email.value;
         var senhaVar = ipt_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
+         mensagem_erro.innerHTML = "Preencha os campos";
             return false;
         }
         else {
