@@ -10,8 +10,8 @@
     <div class="lateral_deshboard">
         <img src="../public/assets/imagens/user (3).png" alt="" class="imgperfil_dashboard">
              <div class="dados_usuario">
-            <div class="dados1"><b>Usuário: Guilherme</b> </div>
-            <div class="dados2"> <b>Email: guisanti@gmail.com</b></div>
+            <div class="dados1"><p id="usuario"></p> </div>
+            <div class="dados2"> <p id="usuario_email"></p></div>
         </div>
            
         <div class="direcao_button">
@@ -29,3 +29,7 @@
     </div>
 </body>
 </html>
+<script>
+    document.getElementById("usuario").innerHTML = "Usuario: " + sessionStorage.NOME_USUARIO
+    document.getElementById("usuario_email").innerHTML = "Email: " + sessionStorage.EMAIL_USUARIO
+</script>
