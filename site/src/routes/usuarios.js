@@ -12,6 +12,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+
+//Re
 router.get("/estatistica", function (req, res) {
     usuarioController.estatistica(req, res);
 });
