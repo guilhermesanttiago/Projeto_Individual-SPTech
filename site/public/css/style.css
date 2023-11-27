@@ -1558,17 +1558,19 @@
 .dados1{
     text-align: center;
     margin-right: 10px;
-    font-size: 15px;
+    font-size: 20px;
     padding-bottom: 10px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 
 .dados2{
     text-align: center;
     margin-right: 10px;
-    font-size: 13px;
+    font-size: 20px;
     height: 120px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
 }
 
 .direcao_button{
@@ -1593,11 +1595,32 @@
 
 }
 
+.sair{
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 25px;
+    color: #000000;
+    background-color: #10520A;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+    margin-top: 200px;
+}
+
 .quiz_edicao:hover{
     background-color: #10520A;
     transition: 1s;
-   width: 112%;
-    
+    width: 112%;
+}
+
+.sair:hover{
+    background-color: #ECD614;
+    transition: 1s;
+    width: 105%; 
 }
 
 
@@ -1767,13 +1790,14 @@
 }
 
 
-.direcao_ty{
+.titulo_dash2{
     font-size: 70px;
     color: #10520A;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding-top: 20px;
     text-shadow: black 0.1em 0.1em 0.0em;
     animation: direcao_ty 2s linear infinite alternate;
+    text-decoration: none;
     
 }
 
