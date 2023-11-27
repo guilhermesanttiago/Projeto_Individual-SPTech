@@ -1609,10 +1609,12 @@
     background-color: #ECD614;
     width: 200px;
     height: 30px;
-    align-self: center;
     cursor: pointer;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .button_dashboard:hover{
@@ -1674,10 +1676,10 @@
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-left: 50px;
-    animation: txt_dashboard 2s linear infinite alternate;
+    animation: titulo_footer 2s linear infinite alternate;
 }
 
-@keyframes txt_dashboard{
+@keyframes titulo_footer{
     0% {
         margin-left:  120px;}
     100% {
@@ -1748,4 +1750,61 @@
     height: 250px; 
     border-radius: 50%;
     margin-left: 100px;
+}
+
+/*Tela Dash2*/
+
+.tela_dash2{
+    width: 100%;
+    height: 739px;
+    background-color: #ECD614;
+}
+
+.direcao_ty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.direcao_ty{
+    font-size: 70px;
+    color: #10520A;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-top: 20px;
+    text-shadow: black 0.1em 0.1em 0.0em;
+    animation: direcao_ty 2s linear infinite alternate;
+    
+}
+
+@keyframes direcao_ty{
+    0% {
+        margin-left:  120px;}
+    100% {
+        margin-left:  -120px;
+        }
+    }
+
+.style_dash2{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.dire_titulo_dash2{
+    margin-top: 50px;
+    margin-right: 20px;
+}
+
+.tt_dash2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+}
+
+.chart-container3{
+    background-color: rgba(255, 255, 255, 0.694);
+    border-radius: 20px;
+    margin-top: 10px;
 }

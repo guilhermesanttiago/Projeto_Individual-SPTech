@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="tela_dash2">
+        <div class="direcao_ty">
+            <p class="titulo_dash2">DASHBOARD</p>
+        </div>
+
+
+        <div class="style_dash2">
+            <div class="dire_titulo_dash2">
+                <p class="tt_dash2">FAVORITOS POR USUÁRIO</p>
+            </div>
+            <canvas id="myChart2" class="chart-container3" style=" height: 300px; width: 100%;"></canvas>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+    function gerargraficos(resposta) {
+        var lista1 = [];
+        var lista2 = [];
+
+        for (var i = 0; i < resposta.length; i++) {
+            lista1.push(resposta[i].nome)
+            lista2.push(resposta[i].count)
+        }
+        const ctx = document.getElementById('myChart2');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: lista1,
+                datasets: [{
+                    label: '# of Votes',
+                    data: lista2,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+    }
+
+    fetch("usuarios/estatistica", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+
+        .then(function (resposta) {
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+
+                    gerargraficos(json)
+
+
+
+
+                })
+
+
+            } else {
+                console.log("Houve um erro ao tentar realizar a solitação!");
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        })
+
+        .catch(function (erro) {
+            console.log(erro);
+        })
+
+
+
+</script>

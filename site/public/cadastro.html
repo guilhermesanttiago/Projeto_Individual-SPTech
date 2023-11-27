@@ -46,9 +46,14 @@
         </div>
 
         <div class="categoria_cadastro">
-          <p class="categoria_campos_cadastro">Celular:</p>
-          <input type="text" id="ipt_celular" class="campos_cadastro" placeholder="(XX)XXXXX-XXXX">
-        </div>
+          <p class="categoria_campos_cadastro">Jogador Favorito:</p>
+          <select name="" id="select_jogador">
+            <option value="1">Neymar</option>
+            <option value="2">Pelé</option>
+            <option value="3">Ronaldo</option>
+            <option value="4">Romário</option>
+            <option value="5">Zico</option>
+          </select>
 
         <div class="categoria_cadastro">
           <p class="categoria_campos_cadastro">E-mail:</p>
@@ -83,14 +88,14 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = ipt_nome.value;
-    var celularVar = ipt_celular.value;
+    var jogadorVar = select_jogador.value;
     var emailVar = ipt_email.value;
     var senhaVar = ipt_senha.value;
     var confirmacaoSenhaVar = ipt_confirmarsenha.value;
 
     if (
       nomeVar == "" ||
-      celularVar == "" ||
+      jogadorVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""  
@@ -108,7 +113,7 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
-        celularServer: celularVar,
+        jogadorServer: jogadorVar,
         emailServer: emailVar,
         senhaServer: senhaVar
       }),
