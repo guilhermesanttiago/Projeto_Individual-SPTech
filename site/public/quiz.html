@@ -1,11 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="css/quiz.css">
+
+
+  <title>Brasil</title>
 </head>
 <body>
+
+ 
+
+  <!-- Quiz -->
+  <div class="dire_ttquiz">
+    
+    <a href="dashboard.html" style="text-decoration: none;"><h2 class="titulo_quiz">QUIZ SELEÇÃO BRASILEIRA</h2></a>
+
+  </div> 
   
+
+    <div class="container">
+      <div class="questions-container hide">
+        <span class="question">Pergunta aqui?</span>
+        <div class="answers-container">
+          <button class="answer button">Resposta 1</button>
+          <button class="answer button">Resposta 2</button>
+          <button class="answer button">Resposta 3</button>
+          <button class="answer button">Resposta 4</button>
+        </div>
+    </div>
+    <div class="controls-container">
+      <button class="start-quiz button">Começar Quiz!</button>
+      <button class="next-question button hide">Próxima pergunta</button>
+    </div>
+  </div>
+
+  
+
 </body>
 </html>
+<script>
+var comecar = document.querySelector(".start-quiz")
+var proxima = document.querySelector(".next-question")
+var questao = document.querySelector(".questions-container")
+var pergunta = document.querySelector(".question")
+var campresposta = document.querySelector(".answers-container")
+var answers = document.querySelectorAll(".answer")
+
+let currentQuestionIndex = 0
+var altcorreta = 0
+
+comecar.addEventListener("click", startGame)
+proxima.addEventListener("click", displayNextQuestion)
+
+function startGame() {
+  comecar.classList.add("hide")
+  questao.classList.remove("hide")
+  displayNextQuestion()
+}
+
+function displayNextQuestion() {
+  resetState()
+  
+  if (questions.length === currentQuestionIndex) {
+    return finishGame()
+  }
+
+  pergunta.textContent = questions[currentQuestionIndex].question
+  questions[currentQuestionIndex].answers.forEach(answer => {
+    const newAsnwer = document.createElement("button")
+    newAsnwer.classList.add("button", "answer")
+    newAsnwer.textContent = answer.text
+    if (answer.correct) {
+      newAsnwer.dataset.correct = answer.correct
+    }
+    campresposta.appendChild(newAsnwer)
+
+    newAsnwer.addEventListener("click", selectAnswer)
+  })
+}
+
+function resetState() {
+  while(campresposta.firstChild) {
+    campresposta.removeChild(campresposta.firstChild)
+  }
+
+  document.body.removeAttribute("class")
+  proxima.classList.add("hide")
+}
+
+function selectAnswer(event) {
+  const answerClicked = event.target
+
+  if (answerClicked.dataset.correct) {
+    document.body.classList.add("correct")
+    altcorreta++
+  } else {
+    document.body.classList.add("incorrect") 
+  }
+
+  document.querySelectorAll(".answer").forEach(button => {
+    button.disabled = true
+
+    if (button.dataset.correct) {
+      button.classList.add("correct")
+    } else {
+      button.classList.add("incorrect")
+    }
+  })
+  
+  proxima.classList.remove("hide")
+  currentQuestionIndex++
+}
+
+function finishGame() {
+  var totalquest = questions.length
+  var performace = Math.floor(altcorreta * 100 / totalquest)
+  
+
+  
+  var message = ""
+
+  switch (true) {
+    case (performace >= 90):
+      message = "Perfeito :)"
+      break
+    case (performace >= 70):
+      message = "Ótimo"
+      break
+    case (performace >= 50):
+      message = "Bom"
+      break
+    default:
+      message = "Precisa melhorar!"
+  }
+
+  questao.innerHTML = 
+  `
+    <p class="final-message">
+      Você acertou ${altcorreta} de ${totalquest} questões
+      <span>Resultado: ${message}</span>
+    </p>
+      <button 
+      onclick=window.location.reload() 
+      class="button"
+    >
+      Refazer teste
+    </button>
+    
+  `
+}
+
+
+var questions = [
+  {
+    question: `Quem é o jogador mais novo á ganhar uma copa do mundo?`,
+    answers: [
+      { text: "Garrinha", correct: false },
+      { text: "Rivaldo", correct: false },
+      { text: "Pelé", correct:  true },
+      { text: "Ronaldinho", correct: false }
+    ]
+  },
+  {
+    question: `Quando foi o primeiro título de copa do mundo?`,
+    answers: [
+      { text: "1962", correct: false },
+      { text: "1958", correct: true },
+      { text: "1970", correct: false },
+      { text: "2002", correct: false }
+    ]
+  },
+  {
+    question: `Quem é o artilheiro da seleção?`,
+    answers: [
+      { text: 'Neymar', correct: true },
+      { text: 'Zico', correct: false },
+    {  text: 'Kaká', correct: false },
+      { text: "Romário", correct: false }
+    ]
+  },
+  {
+    question: 'Quantos títulos tem a Seleção Brasileira?',
+    answers: [
+      { text: "3", correct: false },
+      { text: "2", correct: false },
+      { text: "6", correct: false },
+      { text: "5", correct: true }
+    ]
+  },
+  {
+    question: 'Qual jogador é o artilheiro do Brasil em copas do mundo?',
+    answers: [
+      { text: 'Ronaldo Fenômeno', correct: true },
+      { text: 'Cafu', correct: false },
+      { text: 'Ronaldinho', correct: false },
+      { text: 'Neymar', correct: false }
+    ]
+  },
+  {
+    question: 'Quem é o unico jogador a ter três copa do mundo?',
+    answers: [
+      { text: 'Garrincha', correct: false },
+      { text: 'Pelé', correct: true },
+      { text: 'Rivelino', correct: false },
+      { text: 'Ronaldo Fenômeno', correct: false }
+    ]
+  },
+  {
+    question: 'Quando foi a última conquista de copa do mundo? ',
+    answers: [
+      { text: '1994', correct: false },
+      { text: '1958', correct: false },
+      { text: '2022', correct: false },
+      { text: '2002', correct: true },
+    ]
+  },
+  {
+    question: 'Qual é o jogador que participou de três finais de copas seguidas? ',
+    answers: [
+      { text: 'Pelé', correct: false },
+      { text: 'Adriano', correct: false },
+      { text: 'Bebeto', correct: false },
+      { text: 'Cafu', correct: true },
+    ]
+  },
+  {
+    question: 'Brasil é o país que tem mais títulos de copa do mundo?',
+    answers: [
+      { text: 'Não', correct: false },
+      { text: 'Sim', correct: true },
+      
+    ]
+  },
+  {
+    question: 'Quando foi o tetra? ',
+    answers: [
+      { text: '1994', correct: true },
+      { text: '2002', correct: false },
+      { text: '1970', correct: false },
+      { text: "1962", correct: false }
+     
+    ]
+  },
+ 
+]
+</script>
