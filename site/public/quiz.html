@@ -42,6 +42,8 @@
 </body>
 </html>
 <script>
+
+  // Seleção de elementos HTML
 var comecar = document.querySelector(".start-quiz")
 var proxima = document.querySelector(".next-question")
 var questao = document.querySelector(".questions-container")
@@ -49,58 +51,70 @@ var pergunta = document.querySelector(".question")
 var campresposta = document.querySelector(".answers-container")
 var answers = document.querySelectorAll(".answer")
 
-let currentQuestionIndex = 0
-var altcorreta = 0
+// Variáveis de controle
+let currentQuestionIndex = 0 // Índice da pergunta atual
+var altcorreta = 0 // Contador de respostas corretas
 
-comecar.addEventListener("click", startGame)
-proxima.addEventListener("click", displayNextQuestion)
+// Event listeners para botões
+comecar.addEventListener("click", startGame)  // Iniciar o jogo
+proxima.addEventListener("click", displayNextQuestion)// Exibir próxima pergunta
 
+// Função para iniciar o jogo
 function startGame() {
-  comecar.classList.add("hide")
-  questao.classList.remove("hide")
-  displayNextQuestion()
+  comecar.classList.add("hide")  // Esconde o botão de início
+  questao.classList.remove("hide") // Mostra a seção das perguntas
+  displayNextQuestion() // Exibe a primeira pergunta
 }
 
+
+// Função para exibir a próxima pergunta
 function displayNextQuestion() {
-  resetState()
+  resetState() // Reinicia o estado dos elementos de resposta
   
   if (questions.length === currentQuestionIndex) {
-    return finishGame()
+    return finishGame() // Verifica se todas as perguntas foram respondidas
   }
 
+    // Define o texto da pergunta atual
   pergunta.textContent = questions[currentQuestionIndex].question
-  questions[currentQuestionIndex].answers.forEach(answer => {
-    const newAsnwer = document.createElement("button")
-    newAsnwer.classList.add("button", "answer")
-    newAsnwer.textContent = answer.text
-    if (answer.correct) {
-      newAsnwer.dataset.correct = answer.correct
-    }
-    campresposta.appendChild(newAsnwer)
 
-    newAsnwer.addEventListener("click", selectAnswer)
+   // Adiciona botões para cada resposta da pergunta atual
+  questions[currentQuestionIndex].answers.forEach(answer => {
+    const newAsnwer = document.createElement("button");
+    newAsnwer.classList.add("button", "answer");
+    newAsnwer.textContent = answer.text;
+
+    if (answer.correct) {
+      newAsnwer.dataset.correct = answer.correct; // Define se a resposta é correta
+    }
+    campresposta.appendChild(newAsnwer) // Adiciona o botão de resposta
+
+    newAsnwer.addEventListener("click", selectAnswer) // Event listener para resposta selecionada
   })
 }
 
+// Reinicia o estado dos elementos de resposta
 function resetState() {
   while(campresposta.firstChild) {
     campresposta.removeChild(campresposta.firstChild)
   }
 
-  document.body.removeAttribute("class")
-  proxima.classList.add("hide")
+  document.body.removeAttribute("class"); // Remove classes do body
+  proxima.classList.add("hide");  //Esconde o botão de próxima pergunta
 }
 
+// Função para lidar com a seleção de uma resposta
 function selectAnswer(event) {
   const answerClicked = event.target
 
   if (answerClicked.dataset.correct) {
-    document.body.classList.add("correct")
-    altcorreta++
+    document.body.classList.add("correct") // Adiciona classe de resposta correta
+    altcorreta++ // Incrementa o contador de respostas corretas
   } else {
-    document.body.classList.add("incorrect") 
+    document.body.classList.add("incorrect"); // Adiciona classe de resposta incorreta
   }
 
+  // Desabilita todos os botões de resposta e adiciona classes correspondentes
   document.querySelectorAll(".answer").forEach(button => {
     button.disabled = true
 
@@ -111,8 +125,8 @@ function selectAnswer(event) {
     }
   })
   
-  proxima.classList.remove("hide")
-  currentQuestionIndex++
+  proxima.classList.remove("hide") // Mostra o botão de próxima pergunta
+  currentQuestionIndex++ // Move para a próxima pergunta
 }
 
 function finishGame() {
@@ -157,7 +171,7 @@ function finishGame() {
 var questions = [
   {
     question: `Quem é o jogador mais novo á ganhar uma copa do mundo?`,
-    answers: [
+    answers: [ //É um array de objetos onde cada objeto representa uma resposta possível para a pergunta.
       { text: "Garrinha", correct: false },
       { text: "Rivaldo", correct: false },
       { text: "Pelé", correct:  true },
